@@ -1,0 +1,14 @@
+<template>
+    <div class="background">
+        <lightning-button variant="base" label="Base" title="step1" onclick={handleClick1} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="base" label="Base" title="step2" onclick={handleClick2} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="base" label="Base" title="step3" onclick={handleClick3} class="slds-m-left_x-small"></lightning-button>
+
+        <c-dynamic-datatable
+        key-field="Id"
+        data={result}
+        columns={columns}></c-dynamic-datatable>
+    </div>
+
+
+</template>
