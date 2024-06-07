@@ -1,0 +1,43 @@
+<template>
+    <!--Balise d'ouverture de l'article avec des classes CSS de Salesforce-->
+    <article class="slds-card slds-p-around_medium">
+                      
+    <h1 style="font-weight: bold;">1-Convocation</h1>
+        <hr/>
+
+    <div class="slds-grid slds-gutters slds-m-top_medium">
+        <div class="slds-col slds-size_1-of-12">
+            <lightning-input onchange={changeRdvPossible} type="toggle" label="" name="rdvPossible"></lightning-input>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+            <h3>Prise de Rendez-vous possible</h3>
+        </div>
+    </div> 
+
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_6-of-12">
+<!-- Balise de type Combobox; la liste des rôles disponibles est visibles dans la classe userController.cls
+la liste  des rôles affichées dans le LWC est determinée dans "roleToDisplay" du fichier .js joint -->
+            <lightning-combobox
+                required="true"
+                name="userRole1"
+                label="Responsable de la convocation"
+                options={roles}
+                onchange={handleRoleChange}
+                placeholder="Sélectionner une option">
+            </lightning-combobox>
+        </div>
+    </div>
+    
+    <hr/>                    
+        <div class="slds-grid slds-grid_align-end">
+<!-- Bouton annuler -->
+            <lightning-button variant="Neutral" label="Annuler" title="Annuler" onclick={goToHome} class="slds-m-left_x-small"></lightning-button>
+<!-- Bouton suivant -->
+            <lightning-button type="submit" variant="brand" label="Suivant" title="Suivant" class="slds-m-left_x-small" onclick={handleSuivant}></lightning-button>
+        </div>
+        </article>
+<!-- Message d'erreur -->
+        <div if:true={erreur}>Erreur</div>
+</template>

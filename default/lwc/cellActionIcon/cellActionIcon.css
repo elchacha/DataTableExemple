@@ -1,3 +1,15 @@
 .clickable {
     cursor: pointer;
 }
+
+.blue{
+    --sds-c-icon-color-foreground-default: blue;
+}
+
+.green{
+    --sds-c-icon-color-foreground-default: green;
+}
+
+.red{
+    --sds-c-icon-color-foreground-default: red;
+}

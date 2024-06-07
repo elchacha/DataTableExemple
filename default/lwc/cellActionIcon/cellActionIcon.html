@@ -1,5 +1,15 @@
 <template>
-    <span class="clickable">
-        <lightning-icon icon-name={icon} size={size} variant={variant} onclick={callAction} event-name={eventName}> </lightning-icon>
-    </span>
+    <template if:false={multiIcon}>
+        <span class="clickable">
+            <lightning-icon icon-name={icon} size={size} onclick={callAction} event-name={eventName} style={css}> </lightning-icon>
+        </span>
+    </template>
+    <template if:true={multiIcon}>
+        <template for:each={info} for:item="singleIcon">
+            <span class="clickable slds-p-horizontal_xx-small" key={singleIcon.eventName}>
+                <c-cell-action-icon info={singleIcon} value={value}></c-cell-action-icon>
+            </span>
+        </template>
+    </template>
+
 </template>

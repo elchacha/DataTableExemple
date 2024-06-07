@@ -3,17 +3,7 @@
         <lightning-button variant="base" label="exemple 1" title="step1" onclick={handleClick1} class="slds-m-left_x-small"></lightning-button>
         <lightning-button variant="base" label="exemple 2" title="step2" onclick={handleClick2} class="slds-m-left_x-small"></lightning-button>
         <lightning-button variant="base" label="exemple 3" title="step3" onclick={handleClick3} class="slds-m-left_x-small"></lightning-button>
-
-
-        new template 6
-
-        <template if:true={inputVariables}>
-            wze should execute the flow
-            <lightning-flow if:true={inputVariables} flow-api-name='screenFlowTest'
-                flow-input-variables={inputVariables} onstatuschange={handleStatusChange}>
-            </lightning-flow>
-        </template>
-
+        <lightning-button variant="base" label="exemple 4" title="step3" onclick={handleClick4} class="slds-m-left_x-small"></lightning-button>
 
         <div style="height:75vh">
             <c-dynamic-datatable
